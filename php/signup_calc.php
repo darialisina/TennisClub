@@ -4,7 +4,7 @@ unset($_SESSION['warning']);
 $login = $_POST['email'];
 $pass = $_POST['password'];
 $dbh = new PDO('mysql:host=localhost;dbname=course_work', $_SERVER['DB_USER'], $_SERVER['DB_PASSWORD']);
-//$dbh->query('SELECT id, password, email, isAdmin FROM user');
+
 foreach ($dbh->query('SELECT id, password, email, isAdmin FROM user') as $row) {
 
     if ($login == $row['email'] && $pass == $row['password']) {

@@ -8,3 +8,5 @@ CREATE TABLE User
     phone     VARCHAR(50),
     isAdmin   BOOL
 );
+
+alter table user add constraint user_email_uniq unique (email);
